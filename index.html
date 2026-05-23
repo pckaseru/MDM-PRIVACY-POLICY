@@ -9,54 +9,147 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 0;
+            background-color: #f4f7f6;
             color: #333;
+        }
+        .header {
+            background-color: #673ab7; /* Deep Purple */
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
         .container {
             max-width: 800px;
-            margin: auto;
-            background: #fff;
+            margin: 30px auto;
+            background: white;
             padding: 30px;
-            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
-        h1 {
-            color: #673AB7;
-            text-align: center;
-        }
-        h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
-        p {
+        .lang-toggle-btn {
+            background-color: #ff9800; /* Orange */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
             font-size: 16px;
+            font-weight: bold;
+            float: right;
+            transition: 0.3s;
         }
-    </style> </head>
+        .lang-toggle-btn:hover {
+            background-color: #e68a00;
+        }
+        h2 { color: #673ab7; border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px; }
+        .hi-content { display: none; } /* Hindi content is hidden by default */
+        .footer { text-align: center; margin-top: 40px; font-size: 12px; color: #777; }
+        .clear { clear: both; }
+    </style>
+</head>
 <body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p><strong>Effective Date:</strong> 21 May 2026</p>
-        
-        <p>Prem Ji (Jhunjhunu) built the <strong>MDM Calculator Rajasthan</strong> app as a Free app. This SERVICE is provided by Prem Ji at no cost and is intended for use as is.</p>
 
-        <h2>1. Data Collection and Local Storage</h2>
-        <p>The MDM Calculator Rajasthan app is designed to help teachers calculate daily consumption and generate Monthly UCs. <strong>Important:</strong> This app operates completely offline. All the data you enter (School Name, UDISE code, Cook Cum Helper details, etc.) is stored <strong>locally on your device</strong>. We do not collect or upload any of your data to the internet.</p>
-
-        <h2>2. We Do Not Share Your Data</h2>
-        <p>Because all data is stored on your personal device, we do not have access to it. Therefore, we do not share, sell, or rent your data to any third parties.</p>
-
-        <h2>3. App Permissions</h2>
-        <p>The app may require storage or printing permissions solely for the purpose of generating and saving the UC PDF file on your phone.</p>
-
-        <h2>4. Data Security</h2>
-        <p>The security of your data depends on your device's security. If you use the "Clear All Data" feature in the app or uninstall the app, all stored data will be permanently deleted from your phone.</p>
-
-        <h2>5. Contact Us</h2>
-        <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.</p>
-        <p><strong>Developer:</strong> Prem Ji (Jhunjhunu)<br>
-        <strong>Email:</strong> pc.muhal@gmail.com</p>
+    <div class="header">
+        <h1 style="margin: 0;">MDM Calculator Rajasthan</h1>
+        <p style="margin: 5px 0 0 0;">Privacy Policy</p>
     </div>
+
+    <div class="container">
+        <!-- Language Toggle Button -->
+        <button class="lang-toggle-btn" id="langBtn" onclick="toggleLanguage()">हिंदी में पढ़ें</button>
+        <div class="clear"></div>
+
+        <!-- ================= ENGLISH CONTENT ================= -->
+        <div id="en-content" class="en-content">
+            <p><strong>Last Updated:</strong> May 2026</p>
+            <p>Prem Ji (Jhunjhunu) built the MDM Calculator Rajasthan app as a Free app. This SERVICE is provided by Prem Ji at no cost and is intended for use as is.</p>
+
+            <h2>1. Information Collection and Use (Local Storage)</h2>
+            <p>To provide a better experience while using our Service, the app requires certain information (such as School Name, Bank Details, CCH Names, and Voucher Data). <strong>We do not collect, store, or upload any of this personal data to our servers.</strong> All user-entered data is saved securely and strictly locally on your device (using SharedPreferences).</p>
+
+            <h2>2. Advertising and Third-Party Services</h2>
+            <p>We use third-party advertising companies (such as Google AdMob) to serve ads when you visit our app. These companies may collect and use your device's Advertising ID, network status, and cookies to provide advertisements about goods and services of interest to you. These third-party services have their own Privacy Policies.</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob Privacy Policy</a></li>
+            </ul>
+
+            <h2>3. Permissions Required</h2>
+            <p>Our app requires certain device permissions to function correctly:</p>
+            <ul>
+                <li><strong>Storage/File Access:</strong> Required strictly to generate and save PDF files (Vouchers, Receipts, and Letters) on your device.</li>
+                <li><strong>Internet/Network Access:</strong> Required to display third-party advertisements.</li>
+            </ul>
+
+            <h2>4. Security</h2>
+            <p>We value your trust in providing us with your data. Since all sensitive data (like bank accounts and names) is stored locally on your device, it remains as secure as your device itself. We recommend keeping your device locked to prevent unauthorized access to your generated PDFs.</p>
+
+            <h2>5. Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <strong>[यहाँ अपना ईमेल आईडी डालें - जैसे: youremail@gmail.com]</strong></p>
+        </div>
+
+        <!-- ================= HINDI CONTENT ================= -->
+        <div id="hi-content" class="hi-content">
+            <p><strong>अंतिम अपडेट:</strong> मई 2026</p>
+            <p>प्रेम जी (झुंझुनू) द्वारा MDM Calculator Rajasthan ऐप को एक निःशुल्क (Free) ऐप के रूप में बनाया गया है। यह सेवा प्रेम जी द्वारा बिना किसी शुल्क के प्रदान की जाती है और इसका उपयोग इसी रूप में किया जाना है।</p>
+
+            <h2>1. जानकारी एकत्र करना और उसका उपयोग (लोकल स्टोरेज)</h2>
+            <p>हमारी सेवा का उपयोग करते समय बेहतर अनुभव प्रदान करने के लिए, ऐप को कुछ जानकारी (जैसे स्कूल का नाम, बैंक विवरण, CCH के नाम और वाउचर का डेटा) की आवश्यकता होती है। <strong>हम इस व्यक्तिगत डेटा को अपने सर्वर पर एकत्र, स्टोर या अपलोड नहीं करते हैं।</strong> आपके द्वारा दर्ज किया गया सारा डेटा पूरी तरह से सुरक्षित रूप से केवल आपके डिवाइस (फोन) में ही सेव होता है।</p>
+
+            <h2>2. विज्ञापन (Advertisements) और थर्ड-पार्टी सेवाएं</h2>
+            <p>हम अपने ऐप में विज्ञापन दिखाने के लिए थर्ड-पार्टी विज्ञापन कंपनियों (जैसे Google AdMob) का उपयोग करते हैं। ये कंपनियाँ आपको आपकी रुचि के अनुसार विज्ञापन दिखाने के लिए आपके डिवाइस की 'Advertising ID', नेटवर्क स्थिति और 'Cookies' का उपयोग कर सकती हैं। इन थर्ड-पार्टी सेवाओं की अपनी अलग प्राइवेसी पॉलिसी होती है।</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob की गोपनीयता नीति</a></li>
+            </ul>
+
+            <h2>3. आवश्यक परमिशन्स (Permissions)</h2>
+            <p>हमारे ऐप को सही ढंग से काम करने के लिए आपके डिवाइस से कुछ अनुमतियों की आवश्यकता होती है:</p>
+            <ul>
+                <li><strong>स्टोरेज (Storage/Files):</strong> यह अनुमति केवल आपके फोन में PDF फाइलें (वाउचर, रसीदें और बैंक लेटर) बनाने और सेव करने के लिए आवश्यक है।</li>
+                <li><strong>इंटरनेट (Internet/Network):</strong> ऐप में थर्ड-पार्टी विज्ञापन (Ads) दिखाने के लिए इंटरनेट की आवश्यकता होती है।</li>
+            </ul>
+
+            <h2>4. सुरक्षा (Security)</h2>
+            <p>हम आपके डेटा की सुरक्षा को महत्व देते हैं। चूंकि सभी संवेदनशील डेटा (जैसे बैंक खाते और नाम) आपके डिवाइस पर ही लोकली स्टोर किए जाते हैं, इसलिए यह आपके फोन जितना ही सुरक्षित है। हम सलाह देते हैं कि अपने फोन में पासवर्ड लगाकर रखें ताकि कोई भी आपके द्वारा बनाए गए PDF का गलत इस्तेमाल न कर सके।</p>
+
+            <h2>5. इस गोपनीयता नीति में बदलाव</h2>
+            <p>हम समय-समय पर अपनी गोपनीयता नीति को अपडेट कर सकते हैं। इसलिए, आपको सलाह दी जाती है कि किसी भी बदलाव के लिए समय-समय पर इस पृष्ठ की समीक्षा करें। हम इस पृष्ठ पर नई गोपनीयता नीति पोस्ट करके आपको किसी भी बदलाव के बारे में सूचित करेंगे।</p>
+
+            <h2>6. संपर्क करें</h2>
+            <p>यदि हमारी गोपनीयता नीति के बारे में आपके कोई प्रश्न या सुझाव हैं, तो बेझिझक हमसे यहाँ संपर्क करें: <strong>[यहाँ अपना ईमेल आईडी डालें - जैसे: youremail@gmail.com]</strong></p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 MDM Calculator Rajasthan | Created by Prem Ji
+        </div>
+    </div>
+
+    <!-- JavaScript for Language Toggle -->
+    <script>
+        function toggleLanguage() {
+            var enContent = document.getElementById("en-content");
+            var hiContent = document.getElementById("hi-content");
+            var langBtn = document.getElementById("langBtn");
+
+            if (enContent.style.display === "none") {
+                // Switch to English
+                enContent.style.display = "block";
+                hiContent.style.display = "none";
+                langBtn.innerHTML = "हिंदी में पढ़ें";
+                langBtn.style.backgroundColor = "#ff9800"; // Orange
+            } else {
+                // Switch to Hindi
+                enContent.style.display = "none";
+                hiContent.style.display = "block";
+                langBtn.innerHTML = "Read in English";
+                langBtn.style.backgroundColor = "#4caf50"; // Green
+            }
+        }
+    </script>
+
 </body>
 </html>
+
